@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📸 DreamFrame: Memory Photo Aesthetic & NFT Minting
 
-## Getting Started
+DreamFrame started as an AI-powered emotion-to-art app, but now it's evolving into a **memory photo aesthetic editor** with built-in NFT minting. Instead of generating images from prompts, users will **upload their own cherished photos**—for example, a childhood snapshot in your mother's arms—and transform them with beautiful, customizable filters and frames. Once perfected, each "memory frame" can be minted as a unique NFT and preserved forever on-chain.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ✨ What You'll Build
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. **Photo Upload & Preview**  
+   Users can drag & drop or browse to upload a personal memory photo.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+2. **Aesthetic Filter Suite**  
+   - Choose from pre-built filter presets (e.g. Polaroid, Vintage, Pastel, Monochrome).  
+   - Fine-tune intensity, contrast, brightness, grain, and vignette.  
+   - Add artistic frames or "film" borders (Polaroid style, 35 mm slide, retro instant).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. **Custom Overlay & Text**  
+   - Type a date, location, or short caption to overlay on the image.  
+   - Pick fonts and placement (e.g. handwritten, typewriter, neon).
 
-## Learn More
+4. **Live Preview & Download**  
+   See changes in real time and download your edited artwork as a high-resolution PNG.
 
-To learn more about Next.js, take a look at the following resources:
+5. **NFT Minting Extension**  
+   - Upload the final image to IPFS (via Pinata or local node).  
+   - Mint an ERC-721 NFT on a test or mainnet blockchain.  
+   - Store metadata (caption, filter settings, original upload date) alongside image URI.  
+   - View your minted token in a gallery or on OpenSea.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+6. **AI-Enhanced Editing (NEW!)**
+   - Professional-grade photo editing with Pintura integration
+   - AI-powered auto-enhancement to optimize your photos
+   - Face detection for smart caption placement
+   - Advanced editing tools for precision adjustments
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🚀 Why This Matters
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Personal Storytelling**: Turn family photos, travel snapshots, or candid moments into shareable art  
+- **Creative Control**: Non-technical users get professional-grade filter tools without Photoshop  
+- **Digital Keepsakes**: Mint your memories as NFTs, ensuring provenance and permanence  
+- **Demo-Friendly**: Fully offline or local-chain NFT minting for zero-cost prototyping  
+- **AI-Assistance**: Get better results with intelligent enhancement suggestions
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend**: Next.js / React, Tailwind CSS, Framer Motion  
+- **Image Editing**: 
+  - Basic: Custom CSS filters and canvas-based rendering
+  - Advanced: Pintura Professional Photo Editor
+- **AI Features**:
+  - TensorFlow.js for face detection and image analysis
+  - BlazeFace for fast face recognition
+  - AI-based image enhancement
+- **State Management**: React Context or Zustand for filter settings  
+- **IPFS Storage**: Pinata SDK or a self-hosted `go-ipfs` node  
+- **Blockchain**: Ethers.js + Hardhat (local or testnet) + custom ERC-721 contract  
+- **Wallet Integration**: RainbowKit / Wagmi + MetaMask
+
+---
+
+## 📝 How It Works (High-Level)
+
+1. **Upload**: User selects a photo file  
+2. **Filter**: Client-side image editor presents presets and sliders  
+3. **Advanced Edit**: Optional professional editing with AI assistance
+4. **Overlay**: User adds caption text and chooses a frame style  
+5. **Finalize**: Click "Download" or "Mint NFT"  
+6. **Mint Flow**:  
+   - Upload to IPFS → returns `ipfs://CID`  
+   - Call smart contract `mintNFT(ipfs://CID)` → returns token ID  
+   - Display mint confirmation and link to token on a block explorer  
+
+---
+
+## 🔧 Getting Started
+
+See [INSTALLATION.md](./INSTALLATION.md) for detailed setup and usage instructions.
+
+---
+
+## 📱 Live Demo
+
+Coming soon!
